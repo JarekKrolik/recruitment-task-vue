@@ -84,7 +84,7 @@ const woodenPetHouses = [
     id: '73c9f05c-fb3c-468b-a641-03e4f5211af3',
     category: 'pet-house',
     type: 'ground',
-    name: '',
+    name: 'Batman Cave',
     priceInPln: 120,
     color: 'white',
     animalSize: 3
