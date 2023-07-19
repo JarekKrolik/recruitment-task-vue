@@ -2,19 +2,39 @@
   <div class="details">
     <h3>details of product</h3>
     <p>
-      Name of product: <span>{{ product.name }}</span>
+      Category of product:
+      <span>{{ product.category === "pet-house" ? "house for pets" : "pet" }}</span>
     </p>
     <p>
-      Category of product:
-      <span>{{ product.category === "pet-house" ? "house for pet" : "pet" }}</span>
+      {{ product.category === "pet" ? "Name of pet: " : "Model of home: " }}
+      <span>{{ product.name }}</span>
     </p>
     <p v-if="product.category === 'pet-house'">
       type of pet house:
       <span>{{ product.type === "tree" ? "mounted on tree" : "mounted on ground" }}</span>
     </p>
+    <p v-if="product.category === 'pet'">
+      pet species:
+      <span>{{ product.type }}</span>
+    </p>
+    <p>
+      {{ product.category === "pet" ? "color of pet: " : "color of house: " }}
+      <span>{{ product.color }}</span>
+    </p>
+    <p>
+      {{ product.category === "pet" ? "pet size: " : "house size: " }}
+      <span>{{ product.animalSize }}</span>
+    </p>
     <p>
       price: <span>{{ price }} &nbsp;</span><span>{{ currency }}</span>
     </p>
+    <p v-if="product.category !== 'pet'">
+      houses in stock :
+      <span :class="product.count < 5 ? 'low-in-stock' : 'lot-in-stock'">{{
+        product.count
+      }}</span>
+    </p>
+    <p class="alert" v-if="product.count && product.count < 3">Almost out of stock !</p>
   </div>
 </template>
 
@@ -57,9 +77,22 @@ export default {
   }
   p {
     padding: 0.5em;
+    line-height: 2rem;
   }
   span {
     font-weight: bolder;
   }
+}
+.lot-in-stock {
+  font-size: 2rem;
+  color: green;
+}
+.low-in-stock {
+  color: red;
+  font-size: 2rem;
+}
+.alert {
+  color: red;
+  text-align: center;
 }
 </style>
