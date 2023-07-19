@@ -1,6 +1,5 @@
 <template>
   <div class="main__products">
-    <div class="shade"></div>
     <h3 class="text">products list</h3>
     <ul class="main__products-list">
       <ListItem v-for="product of listOfProducts" :key="product.id" :product="product" />
@@ -33,6 +32,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: stretch;
   width: 98%;
   min-height: 40vh;
   border-radius: 10px;
@@ -40,8 +40,7 @@ export default {
   overflow: hidden;
   background-image: url("../assets/img/wood-ge15a0cebe_640.jpg");
   background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
   h3 {
     text-align: center;
     margin: 1em 0;

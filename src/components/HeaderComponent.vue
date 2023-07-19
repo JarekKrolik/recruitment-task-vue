@@ -1,6 +1,5 @@
 <template>
   <header class="main__header">
-    <div class="shade"></div>
     <h1 class="text">Wooden pet houses and pets shop</h1>
     <h2 class="text">Products manager</h2>
   </header>
