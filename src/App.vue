@@ -1,9 +1,16 @@
 <script>
-// import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from 'vue-router'
+import MainComponent from './components/MainComponent.vue';
+
+export default {
+  components:{
+    MainComponent,
+  }
+}
 </script>
 
 <template>
-  <div></div>
+  <MainComponent/>
 </template>
 
 <style lang="scss" scoped>
