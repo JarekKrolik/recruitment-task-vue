@@ -132,11 +132,11 @@ const petsList = [
   {
     id: '2b921ddc-2e7c-4215-8413-5ba2b3b147e0',
     category: 'pet',
-    type: 'wolverine',
+    type: 'rabbit',
     name: 'Logan',
     priceInPln: 290,
     color: 'black',
-    animalSize: 'big'
+    animalSize: 'medium'
   }
 ]
 

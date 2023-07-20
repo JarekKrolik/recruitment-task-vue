@@ -1,14 +1,29 @@
 <template>
   <li class="main__products-item">
-    <div class="main__products-item-picture">
+    <div
+      class="main__products-item-picture"
+      :style="{
+        border: `4px solid ${product.color}`,
+        boxShadow: `0 0 8px ${product.color}`,
+      }"
+    >
       <img
         v-if="product.category === 'pet-house' && product.type === 'ground'"
         src="src\assets\img\house-pngwing.com.png"
         alt="pet house"
       />
       <img
-        v-if="product.category === 'pet'"
-        src="src\assets\img\pngwing.com.png"
+        v-if="product.category === 'pet' && product.animalSize !== 'big'"
+        :src="
+          product.animalSize === 'small'
+            ? 'src/assets/img/pngwing.com.png'
+            : 'src/assets/img/rabbit.png'
+        "
+        alt="pet"
+      />
+      <img
+        v-if="product.category === 'pet' && product.animalSize === 'big'"
+        src="src\assets\img\big.png"
         alt="pet"
       />
       <img
@@ -62,6 +77,7 @@ export default {
   flex-wrap: wrap;
   padding: 1.5em;
   border-radius: 10px;
+  background-color: bisque;
   border: 1px solid black;
   &-picture {
     width: 6rem;

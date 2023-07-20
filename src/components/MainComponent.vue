@@ -1,13 +1,18 @@
 <template>
   <div class="main">
     <HeaderComponent />
-    <ProductsList :listOfProducts="listOfProducts" />
+    <ProductsList
+      :listOfProducts="listOfProducts"
+      @selectedCategory="selectedProducts"
+      @selectedKeyWord="selectedByKeyWord"
+    />
   </div>
 </template>
 
 <script>
 import { listOfAllProducts } from "../assets/data";
-import { getDataFromLocalStorage } from "../assets/dataBaseMockup";
+import { selectByKeyWord } from "../assets/selectByKeyWord";
+import { selectCategory } from "../assets/selectCategory";
 import { ref, onMounted } from "vue";
 import ProductsList from "./ProductsList.vue";
 import HeaderComponent from "./HeaderComponent.vue";
@@ -19,12 +24,21 @@ export default {
   },
   setup: () => {
     const listOfProducts = ref(listOfAllProducts);
-    onMounted(() => {
-      const products = getDataFromLocalStorage();
-      listOfProducts.value = products ? products : listOfAllProducts;
-    });
-
-    return { listOfProducts };
+    // onMounted(() => {
+    // //   const products = getDataFromLocalStorage();
+    //   listOfProducts.value = products ? products : listOfAllProducts;
+    // });
+    const selectedByKeyWord = (word) => {
+      listOfProducts.value = selectByKeyWord(word, listOfAllProducts);
+    };
+    const selectedProducts = (category) => {
+      if (category !== "all") {
+        listOfProducts.value = selectCategory(category, listOfAllProducts);
+      } else {
+        listOfProducts.value = listOfAllProducts;
+      }
+    };
+    return { listOfProducts, selectedProducts, selectedByKeyWord };
   },
 };
 </script>
