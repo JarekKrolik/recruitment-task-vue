@@ -28,6 +28,7 @@ export default {
   background-image: url("../assets/img/wood-ge15a0cebe_640.jpg");
   background-position: center;
   background-repeat: no-repeat;
+
   background-size: cover;
   border-radius: 10px;
   box-shadow: 5px 5px 10px black;
@@ -50,7 +51,9 @@ export default {
 
 @media (min-width: 912px) {
   .main__header {
+    background-image: url("../assets/img/wood-g77fd02f9b_1280.jpg");
     justify-content: space-around;
+    background-attachment: fixed;
     min-width: 20vh;
     h1,
     h2 {
@@ -62,7 +65,6 @@ export default {
   .main__header {
     justify-content: space-around;
     min-width: 30vh;
-    background-image: url("../assets/img/wood-g77fd02f9b_1280.jpg");
     h1,
     h2 {
       font-size: 3.6rem;

@@ -33,7 +33,21 @@ export default {
   padding: 1em;
   border-radius: 10px;
   text-align: center;
+  font-family: "Ysabeau SC", sans-serif;
+  background-color: rgb(246, 200, 143);
   text-transform: uppercase;
   margin: 0.7em auto;
+}
+@media (min-width: 912px) {
+  .input {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .input {
+    width: 60%;
+    font-size: 1.9rem;
+    cursor: pointer;
+  }
 }
 </style>

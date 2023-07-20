@@ -106,4 +106,41 @@ export default {
   color: red;
   text-align: center;
 }
+
+@media (min-width: 912px) {
+  .alert,
+  .lot-in-stock {
+    font-size: 3.1rem;
+  }
+  .details {
+    h3 {
+      font-size: 3rem;
+    }
+    p {
+      font-size: 2.5rem;
+    }
+    p,
+    span {
+      font-weight: bolder;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .alert,
+  .lot-in-stock {
+    font-size: 3.1rem;
+  }
+  .details {
+    h3 {
+      font-size: 2.3rem;
+    }
+    p {
+      font-size: 1.7rem;
+    }
+    p,
+    span {
+      font-weight: bolder;
+    }
+  }
+}
 </style>

@@ -45,5 +45,19 @@ export default {
   border-radius: 10px;
   text-align: center;
   text-transform: uppercase;
+  font-family: "Ysabeau SC", sans-serif;
+  background-color: rgb(246, 200, 143);
+}
+@media (min-width: 912px) {
+  .select {
+    font-size: 2.5rem;
+  }
+}
+@media (min-width: 1200px) {
+  .select {
+    width: 60%;
+    font-size: 1.9rem;
+    cursor: pointer;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="main__products">
-    <h3 class="text">products list</h3>
+    <h3 class="text">Products List :</h3>
     <SelectCategoryComponent @select="handleSubmit" />
     <FilterComponent @currency="handleCurrency" />
     <InputKeyWord @input="handleInput" :value="value" />
@@ -95,9 +95,15 @@ export default {
 
   h3,
   h2 {
+    width: 98%;
     text-align: center;
     margin: 1em 0;
-    font-size: 2.5rem;
+    padding: 0.6em;
+    font-size: 3.4rem;
+    font-family: "Dancing Script";
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 5px 5px 7px black;
   }
   &-list {
     width: 98%;
@@ -108,6 +114,26 @@ export default {
 
   &-list {
     list-style: none;
+  }
+}
+@media (min-width: 912px) {
+  .main__products {
+    background-image: url("../assets/img/wood-g77fd02f9b_1280.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    h3,
+    h2 {
+      font-size: 4.4rem;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .main__products {
+    &-list {
+      width: 70%;
+    }
   }
 }
 </style>

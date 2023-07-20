@@ -33,7 +33,7 @@
       />
     </div>
     <p class="text">{{ product.name }}</p>
-    <p class="text">
+    <p class="text price">
       price :
       {{
         currency !== "PLN"
@@ -95,9 +95,16 @@ export default {
   justify-content: space-between;
   flex-wrap: wrap;
   padding: 1.5em 0.8em;
+  font-family: "Ysabeau SC", sans-serif;
   border-radius: 10px;
-  background-color: bisque;
+  background-color: rgb(246, 200, 143);
   border: 1px solid black;
+  .text {
+    font-size: 1.5rem;
+  }
+  .price {
+    font-weight: 700;
+  }
   &-picture {
     width: 6rem;
     height: 6rem;
@@ -108,6 +115,29 @@ export default {
     box-shadow: 0 0 12px black;
     img {
       width: 100%;
+    }
+  }
+}
+@media (min-width: 912px) {
+  .main__products-item {
+    &-picture {
+      width: 9rem;
+      height: 9rem;
+    }
+    .text {
+      font-size: 2.7rem;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .main__products-item {
+    padding: 1.5rem 5rem;
+    &-picture {
+      width: 7rem;
+      height: 7rem;
+    }
+    .text {
+      font-size: 2.2rem;
     }
   }
 }
