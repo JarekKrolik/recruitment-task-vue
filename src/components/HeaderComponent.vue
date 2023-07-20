@@ -1,7 +1,7 @@
 <template>
   <header class="main__header">
-    <h1 class="text">Wooden pet houses and pets shop</h1>
-    <h2 class="text">Products manager</h2>
+    <h1 class="text">Wooden Pet Houses And Pets Shop</h1>
+    <h2 class="text">Products Manager</h2>
   </header>
 </template>
 
@@ -35,8 +35,38 @@ export default {
 
   h1,
   h2 {
-    margin: 1em 0;
+    width: 98%;
+    margin: 0.5em 0;
+    font-family: "Dancing Script", cursive;
+    font-size: 3.4rem;
+    font-weight: 700;
+    padding: 0.6em;
     text-align: center;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    box-shadow: 5px 5px 7px black;
+  }
+}
+
+@media (min-width: 912px) {
+  .main__header {
+    justify-content: space-around;
+    min-width: 20vh;
+    h1,
+    h2 {
+      font-size: 4.4rem;
+    }
+  }
+}
+@media (min-width: 1200px) {
+  .main__header {
+    justify-content: space-around;
+    min-width: 30vh;
+    background-image: url("../assets/img/wood-g77fd02f9b_1280.jpg");
+    h1,
+    h2 {
+      font-size: 3.6rem;
+    }
   }
 }
 </style>

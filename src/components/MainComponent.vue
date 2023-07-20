@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import { getDataFromLocalStorage } from "../assets/dataBaseMockup";
 import { listOfAllProducts } from "../assets/data";
 import { selectByKeyWord } from "../assets/selectByKeyWord";
 import { selectCategory } from "../assets/selectCategory";
@@ -27,24 +28,23 @@ export default {
   },
   setup: () => {
     const selectedCategory = ref("all");
-    const listOfProducts = ref(listOfAllProducts);
-    // onMounted(() => {
-    // //   const products = getDataFromLocalStorage();
-    //   listOfProducts.value = products ? products : listOfAllProducts;
-    // });
+    const listOfProducts = ref(null);
+    const productsFromStorage = getDataFromLocalStorage();
+    const products = productsFromStorage ? productsFromStorage : listOfAllProducts;
+    listOfProducts.value = products ? products : listOfAllProducts;
     const selectedByKeyWord = (word) => {
       const list =
         selectedCategory.value !== "all"
-          ? selectCategory(selectedCategory.value, listOfAllProducts)
-          : listOfAllProducts;
+          ? selectCategory(selectedCategory.value, products)
+          : products;
       listOfProducts.value = selectByKeyWord(word, list);
     };
     const selectedProducts = (category) => {
       selectedCategory.value = category;
       if (category !== "all") {
-        listOfProducts.value = selectCategory(category, listOfAllProducts);
+        listOfProducts.value = selectCategory(category, products);
       } else {
-        listOfProducts.value = listOfAllProducts;
+        listOfProducts.value = products;
       }
     };
     return { listOfProducts, selectedProducts, selectedByKeyWord };
