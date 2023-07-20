@@ -6,6 +6,7 @@
       @selectedCategory="selectedProducts"
       @selectedKeyWord="selectedByKeyWord"
     />
+    <FooterComponent />
   </div>
 </template>
 
@@ -16,11 +17,13 @@ import { selectCategory } from "../assets/selectCategory";
 import { ref, onMounted } from "vue";
 import ProductsList from "./ProductsList.vue";
 import HeaderComponent from "./HeaderComponent.vue";
+import FooterComponent from "./FooterComponent.vue";
 export default {
   name: "MainComponent",
   components: {
     ProductsList,
     HeaderComponent,
+    FooterComponent,
   },
   setup: () => {
     const listOfProducts = ref(listOfAllProducts);

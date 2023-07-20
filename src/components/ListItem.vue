@@ -13,7 +13,7 @@
         alt="pet house"
       />
       <img
-        v-if="product.category === 'pet' && product.animalSize !== 'big'"
+        v-if="product.category === 'pet' && product.type !== 'canary'"
         :src="
           product.animalSize === 'small'
             ? 'src/assets/img/pngwing.com.png'
@@ -22,8 +22,8 @@
         alt="pet"
       />
       <img
-        v-if="product.category === 'pet' && product.animalSize === 'big'"
-        src="src\assets\img\big.png"
+        v-if="product.category === 'pet' && product.type === 'canary'"
+        src="src\assets\img\canary.png"
         alt="pet"
       />
       <img
@@ -33,8 +33,22 @@
       />
     </div>
     <p class="text">{{ product.name }}</p>
-    <p class="text">price : {{ product.priceInPln }}</p>
-    <ItemDetails v-if="detailsOn" :product="product" :price="product.priceInPln" />
+    <p class="text">
+      price :
+      {{
+        currency !== "PLN"
+          ? (product.priceInPln / Number(currency_rate)).toFixed(2)
+          : product.priceInPln
+      }}
+      {{ currency }}
+    </p>
+    <ItemDetails
+      v-if="detailsOn"
+      :product="product"
+      :price="product.priceInPln"
+      :currency="currency"
+      :currency_rate="currency_rate"
+    />
     <DoubleDown @click="detailsExpand" />
   </li>
 </template>
@@ -54,15 +68,20 @@ export default {
       type: Object,
       required: true,
     },
+    currency: {
+      type: String,
+      default: "PLN",
+    },
+    currency_rate: {
+      type: [String, Number],
+      required: true,
+    },
   },
   setup() {
     const detailsOn = ref(false);
     const detailsExpand = () => {
       detailsOn.value ? (detailsOn.value = false) : (detailsOn.value = true);
     };
-    // const rawObject = JSON.parse(JSON.stringify(props));
-    // const price = rawObject.product.priceInPln;
-    // console.log(price);
     return { detailsOn, detailsExpand };
   },
 };
@@ -75,7 +94,7 @@ export default {
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  padding: 1.5em;
+  padding: 1.5em 0.8em;
   border-radius: 10px;
   background-color: bisque;
   border: 1px solid black;
@@ -84,6 +103,7 @@ export default {
     height: 6rem;
     overflow: hidden;
     padding: 0.3em;
+    margin: 0.3em;
     border-radius: 50%;
     box-shadow: 0 0 12px black;
     img {

@@ -3,9 +3,16 @@
     <h3 class="text">products list</h3>
     <SelectCategoryComponent @select="handleSubmit" />
     <InputKeyWord @input="handleInput" :value="value" />
+    <FilterComponent @currency="handleCurrency" />
     <h2 v-if="listOfProducts.length < 1">No products on the list</h2>
     <ul class="main__products-list">
-      <ListItem v-for="product of listOfProducts" :key="product.id" :product="product" />
+      <ListItem
+        v-for="product of listOfProducts"
+        :currency="currency"
+        :key="product.id"
+        :product="product"
+        :currency_rate="currency_rate"
+      />
     </ul>
   </div>
 </template>
@@ -14,7 +21,9 @@
 import { ref } from "vue";
 import ListItem from "./ListItem.vue";
 import SelectCategoryComponent from "./SelectCategoryComponent.vue";
+import FilterComponent from "./FilterComponent.vue";
 import InputKeyWord from "./InputKeyWord.vue";
+import { checkCurrency } from "../assets/checkCurrency";
 export default {
   name: "ProductsList",
   emits: ["selectedCategory", "selectedKeyWord"],
@@ -22,6 +31,7 @@ export default {
     ListItem,
     SelectCategoryComponent,
     InputKeyWord,
+    FilterComponent,
   },
   props: {
     listOfProducts: {
@@ -31,6 +41,8 @@ export default {
   },
   setup(props, ctx) {
     const selectedProducts = ref(null);
+    const currency = ref("PLN");
+    const currency_rate = ref(0);
     const value = ref(null);
     const handleSubmit = (select) => {
       selectedProducts.value = select;
@@ -40,8 +52,30 @@ export default {
     const handleInput = (keyWord) => {
       ctx.emit("selectedKeyWord", keyWord);
     };
+    const handleCurrency = async (curr) => {
+      if (curr === "PLN") {
+        currency.value = "PLN";
+        return;
+      }
+      currency.value = curr;
+      const currencyRate = await checkCurrency(curr);
+      if (currencyRate !== "error") {
+        currency_rate.value = currencyRate.toFixed(2);
+      } else {
+        currency.value = "PLN";
+        currency_rate.value = 1;
+      }
+    };
 
-    return { handleSubmit, selectedProducts, handleInput, value };
+    return {
+      handleSubmit,
+      selectedProducts,
+      handleInput,
+      value,
+      currency,
+      handleCurrency,
+      currency_rate,
+    };
   },
 };
 </script>

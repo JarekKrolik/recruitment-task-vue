@@ -137,6 +137,15 @@ const petsList = [
     priceInPln: 290,
     color: 'black',
     animalSize: 'medium'
+  },
+  {
+    id: '5b92163v-2e7c-4215-8413-5ba2b3b147f0',
+    category: 'pet',
+    type: 'canary',
+    name: 'Prince',
+    priceInPln: 290,
+    color: 'yellow',
+    animalSize: 'small'
   }
 ]
 

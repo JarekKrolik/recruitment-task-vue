@@ -26,7 +26,14 @@
       <span>{{ product.animalSize }}</span>
     </p>
     <p>
-      price: <span>{{ price }} &nbsp;</span><span>{{ currency }}</span>
+      price:<span
+        >{{
+          currency !== "PLN"
+            ? (product.priceInPln / Number(currency_rate)).toFixed(2)
+            : product.priceInPln
+        }}
+        &nbsp;</span
+      ><span>{{ currency }}</span>
     </p>
     <p v-if="product.category !== 'pet'">
       houses in stock :
@@ -53,6 +60,10 @@ export default {
     currency: {
       type: String,
       default: "PLN",
+    },
+    currency_rate: {
+      type: [String, Number],
+      required: true,
     },
   },
   setup() {
