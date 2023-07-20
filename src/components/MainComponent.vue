@@ -26,15 +26,21 @@ export default {
     FooterComponent,
   },
   setup: () => {
+    const selectedCategory = ref("all");
     const listOfProducts = ref(listOfAllProducts);
     // onMounted(() => {
     // //   const products = getDataFromLocalStorage();
     //   listOfProducts.value = products ? products : listOfAllProducts;
     // });
     const selectedByKeyWord = (word) => {
-      listOfProducts.value = selectByKeyWord(word, listOfAllProducts);
+      const list =
+        selectedCategory.value !== "all"
+          ? selectCategory(selectedCategory.value, listOfAllProducts)
+          : listOfAllProducts;
+      listOfProducts.value = selectByKeyWord(word, list);
     };
     const selectedProducts = (category) => {
+      selectedCategory.value = category;
       if (category !== "all") {
         listOfProducts.value = selectCategory(category, listOfAllProducts);
       } else {

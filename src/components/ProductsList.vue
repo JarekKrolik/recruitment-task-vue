@@ -2,8 +2,8 @@
   <div class="main__products">
     <h3 class="text">products list</h3>
     <SelectCategoryComponent @select="handleSubmit" />
-    <InputKeyWord @input="handleInput" :value="value" />
     <FilterComponent @currency="handleCurrency" />
+    <InputKeyWord @input="handleInput" :value="value" />
     <h2 v-if="listOfProducts.length < 1">No products on the list</h2>
     <ul class="main__products-list">
       <ListItem
@@ -43,7 +43,7 @@ export default {
     const selectedProducts = ref(null);
     const currency = ref("PLN");
     const currency_rate = ref(0);
-    const value = ref(null);
+    const value = ref("");
     const handleSubmit = (select) => {
       selectedProducts.value = select;
       value.value = null;
@@ -66,7 +66,6 @@ export default {
         currency_rate.value = 1;
       }
     };
-
     return {
       handleSubmit,
       selectedProducts,
@@ -82,7 +81,6 @@ export default {
 
 <style lang="scss" scoped>
 .main__products {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;

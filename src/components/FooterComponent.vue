@@ -1,17 +1,12 @@
 <template>
   <footer class="footer">
-    <p class="footer__date"></p>
-    <p class="footer__name"></p>
-    <div class="footer__icon"></div>
+    <p></p>
   </footer>
 </template>
 
 <script>
 export default {
   name: "FooterComponent",
-  setup() {
-    return {};
-  },
 };
 </script>
 
