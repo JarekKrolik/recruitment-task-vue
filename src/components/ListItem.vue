@@ -42,13 +42,15 @@
       }}
       {{ currency }}
     </p>
-    <ItemDetails
-      v-if="detailsOn"
-      :product="product"
-      :price="product.priceInPln"
-      :currency="currency"
-      :currency_rate="currency_rate"
-    />
+    <Transition name="bounce">
+      <ItemDetails
+        v-if="detailsOn"
+        :product="product"
+        :price="product.priceInPln"
+        :currency="currency"
+        :currency_rate="currency_rate"
+      />
+    </Transition>
     <DoubleDown @click="detailsExpand" />
   </li>
 </template>
@@ -88,6 +90,26 @@ export default {
 </script>
 
 <style lang="scss">
+.bounce-enter-active {
+  animation: bounce-in 0.3s linear;
+}
+.bounce-leave-active {
+  animation: bounce-in 0.3s linear reverse;
+}
+@keyframes bounce-in {
+  0% {
+    transform: translateY(-30%);
+    opacity: 0;
+  }
+  50% {
+    transform: translateY(-15%);
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 .main__products-item {
   position: relative;
   display: flex;

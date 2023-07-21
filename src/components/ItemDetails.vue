@@ -80,6 +80,7 @@ export default {
   margin: 0.9em;
   padding: 0.8em;
   background-color: aliceblue;
+  transition: 0.3s;
   h3 {
     border-bottom: 1px solid black;
     text-align: center;
