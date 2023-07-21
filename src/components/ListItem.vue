@@ -42,7 +42,7 @@
       }}
       {{ currency }}
     </p>
-    <Transition name="bounce">
+    <Transition name="rotate">
       <ItemDetails
         v-if="detailsOn"
         :product="product"
@@ -90,23 +90,23 @@ export default {
 </script>
 
 <style lang="scss">
-.bounce-enter-active {
-  animation: bounce-in 0.3s linear;
+.rotate-enter-active {
+  animation: rotate-in 0.3s linear;
 }
-.bounce-leave-active {
-  animation: bounce-in 0.3s linear reverse;
+.rotate-leave-active {
+  animation: rotate-in 0.3s linear reverse;
 }
-@keyframes bounce-in {
+@keyframes rotate-in {
   0% {
-    transform: translateY(-30%);
+    transform: rotateX(-100deg);
     opacity: 0;
   }
   50% {
-    transform: translateY(-15%);
+    transform: rotateX(-50deg);
     opacity: 0.5;
   }
   100% {
-    transform: translateY(0);
+    transform: rotateX(0);
     opacity: 1;
   }
 }
