@@ -1,8 +1,10 @@
 <template>
   <select @change="handleChange" class="select" name="category" id="category">
     <option value="all">all products</option>
-    <option value="pet">pets</option>
-    <option value="pet-house">houses</option>
+    <option value="pet-canaries">pet - canaries</option>
+    <option value="pet-rodents">pet - rodents</option>
+    <option value="pet-house-tree">tree houses</option>
+    <option value="pet-house-ground">ground houses</option>
   </select>
 
   <!-- <select
