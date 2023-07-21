@@ -287,4 +287,59 @@ export default {
     width: 100%;
   }
 }
+@media (min-width: 1200px) {
+  .addProduct {
+    width: 55%;
+    background-image: url("../assets/img/wood-g77fd02f9b_1280.jpg");
+
+    &__exit-btn {
+      width: 7rem;
+      height: 7rem;
+      border: none;
+      margin: 1em;
+      border-radius: 50%;
+      font-size: 2.5rem;
+      background-color: rgb(246, 200, 143);
+      transition: 0.3s;
+      cursor: pointer;
+      &:hover {
+        background-color: black;
+        color: rgb(246, 200, 143);
+      }
+    }
+    .input {
+      width: 98%;
+      display: block;
+    }
+
+    .save-btn {
+      padding: 1.2em 3em;
+      transition: 0.3s;
+      &:hover {
+        background-color: black;
+        color: rgb(246, 200, 143);
+      }
+    }
+
+    .form {
+      width: 80%;
+    }
+
+    label,
+    h2 {
+      display: block;
+      text-align: center;
+      font-size: 2.6rem;
+      width: 98%;
+      margin: 0.3em auto;
+      background-color: rgba(255, 255, 255, 0.5);
+      box-shadow: 5px 5px 10px black;
+      border-radius: 10px;
+      padding: 0.5em;
+    }
+    .select {
+      width: 100%;
+    }
+  }
+}
 </style>
