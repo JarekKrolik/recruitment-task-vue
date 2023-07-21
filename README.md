@@ -1,6 +1,6 @@
 # recruitment-task-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+Products manager for Johhny and his pet shop 😁
 
 [![My Skills](https://skillicons.dev/icons?i=vue,js,html,css,sass)](https://skillicons.dev)
 
