@@ -134,6 +134,10 @@ export default {
     &-list {
       width: 70%;
     }
+    h3,
+    h2 {
+      font-size: 3.6rem;
+    }
   }
 }
 </style>

@@ -51,8 +51,8 @@ export default {
 
 @media (min-width: 912px) {
   .main__header {
-    background-image: url("../assets/img/wood-g77fd02f9b_1280.jpg");
     justify-content: space-around;
+    background-image: url("../assets/img/wood-g77fd02f9b_1280.jpg");
     background-attachment: fixed;
     min-width: 20vh;
     h1,
