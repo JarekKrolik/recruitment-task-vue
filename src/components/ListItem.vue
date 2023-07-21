@@ -3,26 +3,26 @@
     <div class="main__products-item-picture">
       <img
         v-if="product.category === 'pet-house' && product.type === 'ground'"
-        src="src\assets\img\house-pngwing.com.png"
+        src="\assets\img\house-pngwing.com.png"
         alt="pet house"
       />
       <img
         v-if="product.category === 'pet' && product.type !== 'canary'"
         :src="
           product.animalSize === 'small'
-            ? 'src/assets/img/pngwing.com.png'
-            : 'src/assets/img/rabbit.png'
+            ? '/assets/img/pngwing.com.png'
+            : '/assets/img/rabbit.png'
         "
         alt="pet"
       />
       <img
         v-if="product.category === 'pet' && product.type === 'canary'"
-        src="src\assets\img\canary.png"
+        src="\assets\img\canary.png"
         alt="pet"
       />
       <img
         v-if="product.category === 'pet-house' && product.type === 'tree'"
-        src="src\assets\img\feeder.png"
+        src="\assets\img\feeder.png"
         alt="pet"
       />
     </div>
