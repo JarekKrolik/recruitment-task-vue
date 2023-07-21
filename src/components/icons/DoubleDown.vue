@@ -47,6 +47,7 @@ export default {
   cursor: pointer;
   transition: transform 0.3s;
 }
+
 .reverse {
   transform: translateX(-50%) rotate(180deg);
 }

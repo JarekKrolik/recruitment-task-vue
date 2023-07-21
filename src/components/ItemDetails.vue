@@ -26,7 +26,8 @@
       <span>{{ product.animalSize }}</span>
     </p>
     <p>
-      price:<span
+      price:
+      <span
         >{{
           currency !== "PLN"
             ? (product.priceInPln / Number(currency_rate)).toFixed(2)

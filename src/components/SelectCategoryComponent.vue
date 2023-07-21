@@ -48,6 +48,7 @@ export default {
   text-align: center;
   text-transform: uppercase;
   font-family: "Ysabeau SC", sans-serif;
+  box-shadow: 5px 5px 10px black;
   background-color: rgb(246, 200, 143);
 }
 @media (min-width: 912px) {

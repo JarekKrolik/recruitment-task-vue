@@ -1,12 +1,6 @@
 <template>
   <li class="main__products-item">
-    <div
-      class="main__products-item-picture"
-      :style="{
-        border: `4px solid ${product.color}`,
-        boxShadow: `0 0 8px ${product.color}`,
-      }"
-    >
+    <div class="main__products-item-picture">
       <img
         v-if="product.category === 'pet-house' && product.type === 'ground'"
         src="src\assets\img\house-pngwing.com.png"
@@ -132,7 +126,7 @@ export default {
     width: 6rem;
     height: 6rem;
     overflow: hidden;
-    padding: 0.3em;
+    padding: 0.4em;
     margin: 0.3em;
     border-radius: 50%;
     box-shadow: 0 0 12px black;

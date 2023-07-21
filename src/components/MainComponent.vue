@@ -5,17 +5,22 @@
       :listOfProducts="listOfProducts"
       @selectedCategory="selectedProducts"
       @selectedKeyWord="selectedByKeyWord"
+      @saveProduct="saveProductToDatabase"
     />
     <FooterComponent />
   </div>
 </template>
 
 <script>
-import { getDataFromLocalStorage } from "../assets/dataBaseMockup";
+import {
+  getDataFromLocalStorage,
+  insertProductIntoDb,
+  saveDataToLocalStorage,
+} from "../assets/dataBaseMockup";
 import { listOfAllProducts } from "../assets/data";
 import { selectByKeyWord } from "../assets/selectByKeyWord";
 import { selectCategory } from "../assets/selectCategory";
-import { ref, onMounted } from "vue";
+import { ref } from "vue";
 import ProductsList from "./ProductsList.vue";
 import HeaderComponent from "./HeaderComponent.vue";
 import FooterComponent from "./FooterComponent.vue";
@@ -43,7 +48,12 @@ export default {
       selectedCategory.value = category;
       listOfProducts.value = selectCategory(category, products);
     };
-    return { listOfProducts, selectedProducts, selectedByKeyWord };
+    const saveProductToDatabase = async (product) => {
+      const resp = await insertProductIntoDb(product, products);
+      listOfProducts.value = resp;
+      saveDataToLocalStorage(resp);
+    };
+    return { listOfProducts, selectedProducts, selectedByKeyWord, saveProductToDatabase };
   },
 };
 </script>

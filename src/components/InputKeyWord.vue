@@ -27,13 +27,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 .input {
   width: 80%;
   padding: 1em;
   border-radius: 10px;
   text-align: center;
   font-family: "Ysabeau SC", sans-serif;
+  box-shadow: 5px 5px 10px black;
   background-color: rgb(246, 200, 143);
   text-transform: uppercase;
   margin: 0.7em auto;
