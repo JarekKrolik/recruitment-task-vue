@@ -13,6 +13,9 @@ Products manager for Johhny and his pet shop 😁
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
+## clone project
+```sh
+https://github.com/JarekKrolik/recruitment-task-vue.git
 
 ```sh
 npm install
