@@ -41,11 +41,7 @@ export default {
     };
     const selectedProducts = (category) => {
       selectedCategory.value = category;
-      if (category !== "all") {
-        listOfProducts.value = selectCategory(category, products);
-      } else {
-        listOfProducts.value = products;
-      }
+      listOfProducts.value = selectCategory(category, products);
     };
     return { listOfProducts, selectedProducts, selectedByKeyWord };
   },

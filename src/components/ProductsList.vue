@@ -2,7 +2,7 @@
   <div class="main__products">
     <h3 class="text">Products List :</h3>
     <SelectCategoryComponent @select="handleSubmit" />
-    <FilterComponent @currency="handleCurrency" />
+    <FilterComponent @currency="handleCurrency" :givenCurrency="currency" />
     <InputKeyWord @input="handleInput" :value="value" />
     <h2 v-if="listOfProducts.length < 1">No products on the list</h2>
     <ul class="main__products-list">
@@ -62,7 +62,7 @@ export default {
       if (currencyRate !== "error") {
         currency_rate.value = currencyRate.toFixed(2);
       } else {
-        currency.value = "PLN";
+        currency.value = "error";
         currency_rate.value = 1;
       }
     };

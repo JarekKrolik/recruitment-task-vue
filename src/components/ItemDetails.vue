@@ -33,7 +33,7 @@
             : product.priceInPln
         }}
         &nbsp;</span
-      ><span>{{ currency }}</span>
+      ><span>{{ currency === "error" ? "PLN" : currency }}</span>
     </p>
     <p v-if="product.category !== 'pet'">
       houses in stock :

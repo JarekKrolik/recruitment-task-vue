@@ -33,7 +33,8 @@
       />
     </div>
     <p class="text">{{ product.name }}</p>
-    <p class="text price">
+    <p v-if="currency === 'error'" class="text price">can't check rate</p>
+    <p v-if="currency !== 'error'" class="text price">
       price :
       {{
         currency !== "PLN"
