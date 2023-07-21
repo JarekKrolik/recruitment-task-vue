@@ -15,7 +15,7 @@ export default {
   display: flex;
   width: 98%;
   padding: 3rem;
-  background-image: url(require("../assets/img/wood-ge15a0cebe_640.jpg"));
+  background-image: url("../assets/img/wood-ge15a0cebe_640.jpg");
   margin-top: 2rem;
   border-radius: 10px;
   box-shadow: 5px 5px 10px black;
