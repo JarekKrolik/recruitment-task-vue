@@ -14,7 +14,7 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 ## clone project
-```sh
+
 https://github.com/JarekKrolik/recruitment-task-vue.git
 
 ```sh
