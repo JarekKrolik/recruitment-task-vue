@@ -1,6 +1,8 @@
 # recruitment-task-vue
 
-This template should help get you started developing with Vue 3 in Vite.
+Products manager for Johhny and his pet shop 😁
+
+[![My Skills](https://skillicons.dev/icons?i=vue,js,html,css,sass)](https://skillicons.dev)
 
 ## Recommended IDE Setup
 
@@ -12,6 +14,10 @@ See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
+## clone project
+```sh
+https://github.com/JarekKrolik/recruitment-task-vue.git
+```
 ```sh
 npm install
 ```
